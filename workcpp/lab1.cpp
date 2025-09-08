@@ -37,8 +37,14 @@ int main(){
 	u1.next = &u2;
 	u2.next = &u3;
 	u3.next = &u4;
-
-
+	
+	bool newUser = insertUser(head, "Jackie", "as123");
+	
+		if(newUser){
+			cout << "user entered \n";	
+		}else{
+			cout << "try new username \n";
+		}
 
 return 0;
 }
@@ -48,7 +54,19 @@ return 0;
 
 bool insertUser(User*&head, const string& username, const string& password){
 
-	
+	User* newUser = new User(username, password);
+	User* current = head;
+
+		while(current != nullptr){
+			if(current->username == username){
+				return false;
+			}
+			if(current->next == nullptr){
+				current-> next = new User(username, password);
+				return true;
+			}
+		current = current->next;
+		}	
 
 return false;	
 };
