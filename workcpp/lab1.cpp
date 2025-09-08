@@ -45,7 +45,15 @@ int main(){
 		}else{
 			cout << "try new username \n";
 		}
+	
 
+	bool foundUser = findUser(head, "Jack");
+
+		if(foundUser){
+			cout << "Found User";
+		}else{
+			cout << "User not found";
+		} 
 return 0;
 }
 
@@ -72,6 +80,15 @@ return false;
 };
 
 User* findUser(User* head, const string& username){
+	
+	User* current = head;
+		
+	while(current != nullptr){
+		if(current->username == username){
+		return current;
+		}
+	current = current->next;
+	}
 
 return nullptr;
 }
