@@ -41,19 +41,28 @@ int main(){
 	bool newUser = insertUser(head, "Jackie", "as123");
 	
 		if(newUser){
-			cout << "user entered \n";	
+			cout << "User entered \n";	
 		}else{
-			cout << "try new username \n";
+			cout << "Try new username \n";
 		}
 	
 
 	bool foundUser = findUser(head, "Jack");
 
 		if(foundUser){
-			cout << "Found User";
+			cout << "Found User \n";
 		}else{
-			cout << "User not found";
+			cout << "User not found \n";
 		} 
+
+	bool authen = authenticate(head, "Jack", "abc123");
+
+		if(authen){
+			cout << "Valid User \n";
+		}else{
+			cout << "Invalid User \n";
+		}
+	
 return 0;
 }
 
@@ -95,7 +104,17 @@ return nullptr;
 
 
 bool authenticate(User* head, const string& username, const string& password){
+	
+	User* current = head;
 
+	while(current != nullptr){
+		if(current->username == username){
+			if(current->password == password){
+				return true;
+			}
+		}
+	current = current->next;
+	}
 return false;
 }
 
