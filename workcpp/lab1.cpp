@@ -26,6 +26,20 @@ void printUsers(User* head);
 
 int main(){
 
+
+	User u1{"Jack", "abc123"};
+	User u2{"Jill", "abc124"};
+	User u3{"Bob", "abc125"};
+	User u4{"Bill", "abc126"};
+
+	User* head = &u1;
+
+	u1.next = &u2;
+	u2.next = &u3;
+	u3.next = &u4;
+
+
+
 return 0;
 }
 
@@ -33,6 +47,8 @@ return 0;
 
 
 bool insertUser(User*&head, const string& username, const string& password){
+
+	
 
 return false;	
 };
