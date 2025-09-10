@@ -186,11 +186,18 @@ void clearList(User*& head){
 
 
 size_t size(User* head){
-
+	
+	
 return 0;
 }
 
 
 void printUsers(User* head){
+	
+	User* current = head;
 
+	while(current != nullptr){
+		cout << current->username << endl;
+		current = current->next;
+	}
 }
