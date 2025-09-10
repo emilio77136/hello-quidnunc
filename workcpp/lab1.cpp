@@ -79,6 +79,9 @@ int main(){
 		}else{
 			cout << "Remove Front Unsuccessful \n"
 		}
+
+
+	cout <<  "List Size: " << size(head) << endl;
 return 0;
 }
 
@@ -186,9 +189,18 @@ void clearList(User*& head){
 
 
 size_t size(User* head){
+
+	size_t count = 0;
+
+	User* current = head;
+
+	while(current != nullptr){
+		count++;
+		current = current->next;
 	
+	}	
 	
-return 0;
+return count;
 }
 
 
