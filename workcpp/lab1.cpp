@@ -71,6 +71,14 @@ int main(){
 		}else{
 			cout << "Username Not Removed \n";
 		}
+
+	bool remFront = removeFront(head);
+	
+		if(remFront)[
+			cout << "Removed Front \n"
+		}else{
+			cout << "Remove Front Unsuccessful \n"
+		}
 return 0;
 }
 
@@ -128,10 +136,13 @@ return false;
 
 
 bool removeFront(User*& head){
-	
-	
 
-	
+	User* current = head;
+	head = head->next;
+	delete current;
+	return true;
+
+
 }
 
 
