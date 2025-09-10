@@ -18,7 +18,7 @@ bool insertUser(User*& head, const string& username, const string& password);
 User* findUser(User* head, const string& username);
 bool  authenticate(User* head, const string& username, const string& password);
 bool removeFront(User*& head);
-bool removeByUsername(User*& head, const string& username);
+bool removeByUserna,e(User*& head, const string& username);
 void clearlist(User*& head);
 size_t size(User* head);
 void printUsers(User* head);
@@ -39,6 +39,7 @@ int main(){
 	u3.next = &u4;
 	
 	bool newUser = insertUser(head, "Jackie", "as123");
+
 	
 		if(newUser){
 			cout << "User entered \n";	
@@ -63,14 +64,6 @@ int main(){
 			cout << "Invalid User \n";
 		}
 	
-
-	bool remByUser = removeByUsername(head, "Jack);
-
-		if(remByUser){
-			cout << "Username Removed \n";
-		}else{
-			cout << "Username Not Removed \n";
-		}
 return 0;
 }
 
@@ -129,32 +122,15 @@ return false;
 
 bool removeFront(User*& head){
 	
-	
+	if(head == nullptr){
+		return false;
+	}	
 
 	
 }
 
 
 bool removeByUsername(User*& head, const string& username){
-	
-	if(head-> username == username){
-		User* temp = head;
-		head = head->next;
-		delete temp;
-		return true;
-	}
-
-	
-	User* current = head;
-	while(current->next != nullptr){
-		if(current->next->username == username){
-			User* temp = current->next;
-			current->next = current->next->next;
-			delete temp;
-			return true;
-		}
-	current = current->next;
-	}
 
 return false;
 }
