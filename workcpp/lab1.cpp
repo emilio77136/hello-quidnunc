@@ -172,7 +172,16 @@ return false;
 
 
 void clearList(User*& head){
+	
+	User* current = head;
 
+	while(current != nullptr){
+		User* temp = current;
+		current = current->next;
+		delete temp;
+	}
+	
+	cout << "list cleared \n"
 }
 
 
