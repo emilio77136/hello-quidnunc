@@ -26,7 +26,8 @@ void printUsers(User* head);
 
 
 int main(){
-
+	
+	cout << "hello" << endl;
 
 	User u1{"Jack", "abc123"};
 	User u2{"Jill", "abc124"};
